@@ -19,14 +19,10 @@ export class CreateEmploye extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-
-
     submitHandler = async(e) => {
         e.preventDefault()
         console.log(this.state)
         let data = this.state
-
-
         const result =  await fetch('http://dummy.restapiexample.com/api/v1/create', {
             method: 'POST',
             headers: {
@@ -47,7 +43,6 @@ export class CreateEmploye extends Component {
 
         return (
             <div>
-
 
                 <div className="title">Ingresar Empleado</div> 
 
@@ -80,9 +75,6 @@ export class CreateEmploye extends Component {
                 <button type="submit" className="btn btn-primary btn-create">Regresar</button>
                 </Link>
                 
-               
-          
-
                 <footer>Iván Alexander Canel García - 2021</footer>
 
             </div>

@@ -3,19 +3,15 @@ import { useParams, Link } from 'react-router-dom'
 import '../../src/App.css';
 
 
-const Employee = () => {
-    
+const Employee = () => {  
     console.log(useParams());
     const {id} = useParams()
-
-
 
     const [employee, setEmployees] = React.useState([])
 
     React.useEffect(() => {
         obtenerDatos()
     }, [])
-
 
     const obtenerDatos = async () => {
     const data = await fetch(`http://dummy.restapiexample.com/api/v1/employee/${id}`);
@@ -25,12 +21,9 @@ const Employee = () => {
     }
 
 
-
-
     return (
         
         <div>
-
             <div className="title">Employee</div> 
 
             <div className="box-employee">

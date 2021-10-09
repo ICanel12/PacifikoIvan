@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,13 +13,10 @@ import CreateEmploye from './components/CreateEmploye';
 
 function App() {
 
-
   return (
-
     <Router>
 
         <div className="container">
-
         <Switch>
           <Route path="/employees">
             <Employees/>
@@ -37,14 +32,9 @@ function App() {
         </Switch>
 
         </div>
-
     </Router>
   );
-
 }
-
-
-
 
 
 export default App;

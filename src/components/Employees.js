@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-
 import {Link} from "react-router-dom";
 import '../../src/App.css';
 
@@ -20,7 +19,7 @@ const Employees = () => {
         setEmployees(employees.data)
     }
 
-//CAMBIAR 
+
     function Ejercicio1(){
         const check = (num) => {
     
@@ -28,8 +27,7 @@ const Employees = () => {
           if (num < 2) {
               isPrime = false;
           }
-      
-          //APLICANDO ALGORITMO LA CRIBA DE ERATÓSTENES
+
           for (let i = 2; i * i <= num; i++) {
               if ( num % i === 0 ){
                   isPrime = false; 
@@ -46,13 +44,10 @@ const Employees = () => {
             console.log(value + " si es un número primo")
         }else{
             console.log(value + " no es un número primo")
-        }
-    
+        } 
       }
 
-
-
-    
+      
     function Ejercicio2(){
         const consecutiveSum = (num) => {
         let sum = (num * (num + 1)) / 2; 
@@ -70,19 +65,11 @@ const Employees = () => {
 
     console.log(cont + " son los empleados que ganan más de Q 300,000");
 
-
-
-
     return (
 
     <div className="container">
-       
 
-
-
-        <div className="title">Ejercicios</div>
-        
-
+        <div className="title">Ejercicios</div>  
 
         <div className="position-btn">
             <button className="btn btn-primary btn-employee" onClick={Ejercicio1}>Ejercicio1 (Consola)</button>
@@ -105,9 +92,8 @@ const Employees = () => {
      </thead>
      <tbody>
        
-      
-          {
-          employee.map((item, idx) => (
+        {
+        employee.map((item, idx) => (
             <tr key={idx}>
                 <td scope="col">{item.id} </td>
                 <td scope="col">{item.employee_name} </td>
@@ -115,17 +101,14 @@ const Employees = () => {
                 <td scope="col">{item.employee_age} </td>
                 <td scope="col">
                 <Link to={`/employee/${item.id}`}>
-                        <button type="button" className="btn btn-primary">Detalle</button>
+                    <button type="button" className="btn btn-primary">Detalle</button>
                 </Link>
                 </td>
-
             </tr>
            
          ))
-         }
-      
-       </tbody>
-
+         }   
+    </tbody>
 
    </table>
 
@@ -134,19 +117,10 @@ const Employees = () => {
         <button type="button" className="btn btn-primary">Ingresar Usuario</button>
     </Link>
 
-
-
-    
-
-   
     <footer>Iván Alexander Canel García - 2021</footer>
     </div>
     )
-
-
-
 }
-
 
 
 export default Employees
