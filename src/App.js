@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Employees from './components/Employees.js';
+import Employee from './components/Employee.js';
+import CreateEmploye from './components/CreateEmploye';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+
+        <div className="container">
+
+        <Switch>
+          <Route path="/employees">
+            <Employees/>
+          </Route>
+
+          <Route path="/employee/:id">|
+            <Employee/>
+          </Route>
+
+          <Route path="/create">
+            <CreateEmploye/>
+          </Route>
+        </Switch>
+
+        </div>
+
+    </Router>
   );
+
 }
+
+
+
+
 
 export default App;
